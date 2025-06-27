@@ -39,10 +39,7 @@ if [[ -n "${nvim_archives[$arch]}" ]]; then
   curl -LO "https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/${NVIM_ARCHIVE}.tar.gz"
   sudo rm -rf "/opt/${NVIM_ARCHIVE}"
   sudo tar -C /opt -xzf "${NVIM_ARCHIVE}.tar.gz"
-  export_line="export PATH=\"\$PATH:/opt/${NVIM_ARCHIVE}/bin\""
-  if ! grep -Fxq "$export_line" "$HOME/.bashrc"; then
-    echo "$export_line" >> "$HOME/.bashrc"
-  fi
+  sudo ln -s "/opt/${NVIM_ARCHIVE}/bin/nvim" /usr/local/bin/nvim
   rm "${NVIM_ARCHIVE}.tar.gz"
 else
   echo "Unsupported architecture: $arch"
