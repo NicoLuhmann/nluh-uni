@@ -3,7 +3,7 @@ set -e
 
 # Install dependencies
 sudo apt update
-sudo apt install -y curl git wget xclip ripgrep build-essential luarocks gzip tar unzip
+sudo apt install -y curl git wget xclip ripgrep build-essential luarocks gzip tar unzip python3-pip python3-venv
 
 # # Install tiktoken_core for Lua 5.1 -- only needed for copilot chat
 # sudo luarocks install --lua-version 5.1 tiktoken_core
